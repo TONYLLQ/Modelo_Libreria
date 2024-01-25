@@ -4,17 +4,19 @@ CREATE SCHEMA grupo4;
 
 GO
 ---- VALIDACION DE TABLAS ----
-/*1:*/  IF OBJECT_ID ('grupo4.autor') IS NOT NULL DROP TABLE grupo4.autor;
-/*3:*/  IF OBJECT_ID ('grupo4.libro') IS NOT NULL DROP TABLE grupo4.libro;
-/*2:*/  IF OBJECT_ID ('grupo4.editorial') IS NOT NULL DROP TABLE grupo4.editorial;
-/*4:*/  IF OBJECT_ID ('grupo4.cliente') IS NOT NULL DROP TABLE grupo4.cliente;
-/*5:*/  IF OBJECT_ID ('grupo4.categoria') IS NOT NULL DROP TABLE grupo4.categoria;
-/*6:*/  IF OBJECT_ID ('grupo4.empleado') IS NOT NULL DROP TABLE grupo4.empleado;
-/*7:*/  IF OBJECT_ID ('grupo4.sucursal') IS NOT NULL DROP TABLE grupo4.sucursal;
-/*8:*/  IF OBJECT_ID ('grupo4.ventas') IS NOT NULL DROP TABLE grupo4.ventas;
-/*9:*/  IF OBJECT_ID ('grupo4.ventas_detalle') IS NOT NULL DROP TABLE grupo4.ventas_detalle;
-/*10:*/ IF OBJECT_ID ('grupo4.libro_detalle') IS NOT NULL DROP TABLE grupo4.libro_detalle;
-/*11:*/ IF OBJECT_ID ('grupo4.categoria_detalle') IS NOT NULL DROP TABLE grupo4.categoria_detalle;
+/*1:*/  IF OBJECT_ID ('grupo4.ventas_detalle') IS NOT NULL DROP TABLE grupo4.ventas_detalle;
+/*2:*/  IF OBJECT_ID ('grupo4.libro_detalle') IS NOT NULL DROP TABLE grupo4.libro_detalle;
+/*3:*/  IF OBJECT_ID ('grupo4.categoria_detalle') IS NOT NULL DROP TABLE grupo4.categoria_detalle;
+/*4:*/  IF OBJECT_ID ('grupo4.ventas') IS NOT NULL DROP TABLE grupo4.ventas;
+/*5:*/  IF OBJECT_ID ('grupo4.autor') IS NOT NULL DROP TABLE grupo4.autor;
+/*6:*/  IF OBJECT_ID ('grupo4.libro') IS NOT NULL DROP TABLE grupo4.libro;
+/*7:*/  IF OBJECT_ID ('grupo4.editorial') IS NOT NULL DROP TABLE grupo4.editorial;
+/*8:*/  IF OBJECT_ID ('grupo4.cliente') IS NOT NULL DROP TABLE grupo4.cliente;
+/*9:*/  IF OBJECT_ID ('grupo4.categoria') IS NOT NULL DROP TABLE grupo4.categoria;
+/*10:*/ IF OBJECT_ID ('grupo4.empleado') IS NOT NULL DROP TABLE grupo4.empleado;
+/*11:*/ IF OBJECT_ID ('grupo4.sucursal') IS NOT NULL DROP TABLE grupo4.sucursal;
+
+
 
 GO
 ---- CREACION DE TABLAS ----
@@ -37,7 +39,7 @@ CREATE TABLE  grupo4.editorial (
   ruc CHAR (11) NOT NULL, --VALOR UNICO
   direccion VARCHAR(100) NOT NULL, 
   correo VARCHAR(50) NOT NULL, --VALOR UNICO
-  telefono VARCHAR (50) NOT NULL --VALOR UNICO
+  telefono VARCHAR (20) NOT NULL --VALOR UNICO
 
 );
 
@@ -87,7 +89,7 @@ CREATE TABLE grupo4.cliente(
   cliente_id INT IDENTITY NOT NULL,
   nombre VARCHAR(50) NOT NULL,
   apellido VARCHAR(50) NOT NULL,
-  telefono CHAR(9) NOT NULL, --VALOR UNICO
+  telefono CHAR(20) NOT NULL, --VALOR UNICO
   direccion VARCHAR(50)  NULL, 
   correo VARCHAR(50) NOT NULL --VALOR UNICO
   
@@ -100,9 +102,9 @@ CREATE TABLE grupo4.empleado(
   empleado_id INT IDENTITY NOT NULL,
     nombre VARCHAR(50) NOT NULL,
     apellido VARCHAR (50) NOT NULL,
-    dni CHAR(9) NOT NULL, --VALOR UNICO
+    dni CHAR(8) NOT NULL, --VALOR UNICO
     direccion VARCHAR(50) NULL,
-    telefono CHAR(9) NOT NULL, --VALOR UNICO
+    telefono CHAR(20) NOT NULL, --VALOR UNICO
     edad INT NOT NULL
 );
 
