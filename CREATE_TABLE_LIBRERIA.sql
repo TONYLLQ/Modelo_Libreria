@@ -1,6 +1,4 @@
-CREATE DATABASE Libreria;
-USE Libreria;
-CREATE SCHEMA grupo4;
+USE ucontinental;
 
 GO
 ---- VALIDACION DE TABLAS ----
