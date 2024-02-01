@@ -14,7 +14,7 @@ select* from grupo4.ventas_detalle
 
 ---PREGUNTAS
 
----1. ¿Cuál es el total de cantidad de ejemplares de libros vendidos por mes de los últimos 24 meses y cuál es la variación inter anual?
+---1. ¿Cuál es la cantidad total de ejemplares de libros vendidos por mes de los últimos 24 meses y cuál es la variación inter mensual?
 
 WITH TotalLibrosPorMes AS (
     SELECT
@@ -44,7 +44,7 @@ ORDER BY
 
 
 
----2. ¿Cuál es la facturación total por mes de los últimos 24 meses y cuál es la variación inter anual?
+---2. ¿Cuál es la facturación total por mes de los últimos 24 meses y cuál es la variación inter mensual?
 
 WITH TotalFacturacionPorMes AS (
     SELECT
@@ -75,7 +75,7 @@ ORDER BY
 
 
 
----3. ¿Cuáles son los 10 libros más vendidos durante los últimos 12 meses y cuál es su porcentaje de facturación?
+---3. ¿Cuáles son los 10 libros que generaron mayor facturación durante los últimos 12 meses y cuál es su porcentaje de facturación?
 
 WITH LibrosMasVendidos AS (
     SELECT TOP 10
@@ -105,7 +105,7 @@ ORDER BY
 
 
 
----4. ¿Quienes son los 5 autores más vendidos durante los últimos 12 meses y cuál es su porcentaje de facturación?
+---4. ¿Quienes son los 5 autores que generaron mayor facturación durante los últimos 12 meses y cuál es su porcentaje de facturación?
 
 WITH AutoresMasVendidos AS (
     SELECT TOP 5
@@ -138,7 +138,7 @@ ORDER BY
 
 
 
----5. ¿Cómo se distribuyen las ventas por categorías de ejemplares de libros vendidos y facturación durante los últimos 12 meses? 
+---5. ¿Cómo se distribuye la facturación total por categoría de libros durante los últimos 12 meses? 
 
 WITH VentasPorCategoria AS (
     SELECT
@@ -170,7 +170,7 @@ ORDER BY
 
 
 
----6. ¿Cómo se distribuyen las ventas por sucursal de ejemplares de libros vendidos y facturación durante los últimos 12 meses?
+---6. ¿Cómo se distribuyen la facturación total por sucursal durante los últimos 12 meses?
 
 WITH VentasPorSucursal AS (
     SELECT
@@ -200,7 +200,7 @@ ORDER BY
 
 
 
----7. ¿Quienes son los 5 empleados con más ventas y facturación en los últimos 12 meses?
+---7. ¿Quienes son los 5 empleados que generaron mayor facturación en los últimos 12 meses?
 
 WITH EmpleadosVentas AS (
     SELECT
@@ -232,7 +232,7 @@ ORDER BY
 
 
 
----8. ¿Quiénes son los 5 clientes con más compras y facturación en los últimos 12 meses?
+---8. ¿Quiénes son los 5 clientes que generaron mayor facturación en los últimos 12 meses?
 
 WITH ComprasPorCliente AS (
     SELECT
@@ -276,8 +276,7 @@ WHERE
 
 
 
-
----10. ¿Cuál es el total de clientes que han comprado libros por mes de los últimos 24 meses y cuál es la variación inter anual?
+---10. ¿Cuál es el total de clientes por mes que han comprado libros en los últimos 24 meses y cuál es la variación inter mensual?
 
 WITH ClientesPorMes AS (
     SELECT
